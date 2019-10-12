@@ -247,7 +247,7 @@ def save_cnn_plots(epoch, i, y, output, plot_each=10, all_dataset=False, dir_plo
     :param y: the real reconstructed image
     :param output: the reconstructed reconstructed image
     :param plot_each: plot each x epochs
-    :param all_dataset: plot all dataset
+    :param all_dataset: plot all data
     :param dir_plots: directory for plotting
     """
     if epoch % plot_each == 0:
@@ -264,7 +264,7 @@ def plot_output_graph(epoch, id, adj, coord, plots_path, no_edges=False, is_eval
     Plot graphs reconstructed by the model.
     
     :param epoch: current epoch
-    :param id: id of the datapoint in the dataset
+    :param id: id of the datapoint in the data
     :param adj: adjacency matrix A
     :param coord: node coordinate matrix X
     :param plots_path: path for saving plots

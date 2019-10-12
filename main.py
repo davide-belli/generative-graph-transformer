@@ -307,7 +307,7 @@ def epoch_train_MLP(args, epoch, dataloader, decoder, encoder, optimizer_decoder
         mask_A = torch.zeros((y_adj.shape[0], current_max_seq_len, current_max_seq_len)).to(args.device)
         mask_X = torch.zeros((y_adj.shape[0], current_max_seq_len, 2)).to(args.device)
         
-        # get a fixed size representation of A and X from the sequential representation in the dataset
+        # get a fixed size representation of A and X from the sequential representation in the data
         # get masks for data cleaning and padding
         for i in range(y_adj.shape[0]):
             A = decode_adj(y_adj[i, :seq_len[i] - 1].cpu().numpy())

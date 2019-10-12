@@ -41,7 +41,7 @@ def get_parser():
     
     # Fixed hyper-parameters
     parser.add_argument('--augment', default=False, type=bool,
-                        help='use augmented dataset with flip and rotation')
+                        help='use augmented data with flip and rotation')
     parser.add_argument('--features_dim', default=900, type=int,
                         help='dimension of the visual features')
     parser.add_argument('--pretrained_encoder', default=True, type=bool,
@@ -64,8 +64,8 @@ def get_parser():
                         help='Plot visualizations for attention over sequence')
     
     # paths for outputs
-    parser.add_argument('--dataset_path', default="./dataset/", type=str,
-                        help='dataset path')
+    parser.add_argument('--dataset_path', default="./data/", type=str,
+                        help='data path')
     parser.add_argument('--tensorboard_path', default="./output_graph/tensorboard/", type=str,
                         help='tensorboard path')
     parser.add_argument('--logs_path', default="./output_graph/logs/", type=str,

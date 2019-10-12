@@ -14,21 +14,21 @@ class ToulouseRoadNetworkDataset(Dataset):
     Generates a subclass of the PyTorch torch.utils.data.Dataset class
     """
     
-    def __init__(self, root_path="dataset/", split="valid",
+    def __init__(self, root_path="data/", split="valid",
                  max_prev_node=4, step=0.001, use_raw_images=False, return_coordinates=False):
         r"""
         
-        :param root_path: root dataset path
-        :param split: dataset split in {"train", "valid", "test", "augment"}
+        :param root_path: root data path
+        :param split: data split in {"train", "valid", "test", "augment"}
         :param max_prev_node: only return the last previous 'max_prev_node' elements in the adjacency row of a node
-            default is 4, which corresponds to the 95th percentile in the dataset
-        :param step: step size used in the dataset generation, default is 0.001° (around 110 metres per datapoint)
+            default is 4, which corresponds to the 95th percentile in the data
+        :param step: step size used in the data generation, default is 0.001° (around 110 metres per datapoint)
         :param use_raw_images: loads raw images if yes, otherwise faster and more compact numpy array representations
         :param return_coordinates: returns coordinates on the real map for each datapoint, used for qualitative studies
         """
         root_path += str(step)
         assert split in {"train", "valid", "test", "augment"}
-        print(f"Started loading the dataset ({split})...")
+        print(f"Started loading the data ({split})...")
         start_time = time.time()
         
         dataset_path = f"{root_path}/{split}.pickle"
@@ -59,13 +59,13 @@ class ToulouseRoadNetworkDataset(Dataset):
     
     def __len__(self):
         r"""
-        :return: dataset length
+        :return: data length
         """
         return len(self.seq_len)
     
     def __getitem__(self, idx):
         r"""
-        :param idx: index in the dataset
+        :param idx: index in the data
         :return: chosen data point
         """
         if self.return_coordinates:
@@ -77,9 +77,9 @@ class ToulouseRoadNetworkDataset(Dataset):
 
 def load_dataset(dataset_path, max_prev_node, return_coordinates):
     r"""
-    Loads the chosen split of the dataset
+    Loads the chosen split of the data
     
-    :param dataset_path: path of the dataset split pickle
+    :param dataset_path: path of the data split pickle
     :param max_prev_node: only return the last previous 'max_prev_node' elements in the adjacency row of a node
     :param return_coordinates: returns coordinates on the real map for each datapoint
     :return:
@@ -129,7 +129,7 @@ def load_images(ids, images_path):
     r"""
     Load images from arrays in pickle files
     
-    :param ids: ids of the images in the dataset order
+    :param ids: ids of the images in the data order
     :param images_path: path of the pickle file
     :return: the images, as pytorch tensors
     """
@@ -149,7 +149,7 @@ def load_raw_images(ids, images_path):
     r"""
     Load images from raw files
     
-    :param ids: ids of the images in the dataset order
+    :param ids: ids of the images in the data order
     :param images_path: path of the raw images
     :return: the images, as pytorch tensors
     """
@@ -252,4 +252,4 @@ if __name__ == "__main__":
     start_time = time.time()
     for datapoint in dataloader:
         this_x_adj, this_x_coord, this_y_adj, this_y_coord, this_img, this_seq_len, this_id = datapoint
-    print(f"Iteration over the dataset completed, took {round(time.time() - start_time, 2)}s!")
+    print(f"Iteration over the data completed, took {round(time.time() - start_time, 2)}s!")

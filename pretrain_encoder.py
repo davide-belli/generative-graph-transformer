@@ -135,10 +135,10 @@ if __name__ == "__main__":
                         help='size of each batch')
     parser.add_argument('--lr_rate', default=3e-4, type=float,
                         help='learning rate')
-    parser.add_argument('--dataset_path', default="./dataset", type=str,
-                        help='dataset path')
+    parser.add_argument('--dataset_path', default="./data", type=str,
+                        help='data path')
     parser.add_argument('--step', default=0.001, type=float,
-                        help='Step used to generate the dataset')
+                        help='Step used to generate the data')
     parser.add_argument('--context_attention', default=True, type=bool,
                         help='choose between CNNEncoderSimple and CNNEncoderSimpleForContextAttention')
     
