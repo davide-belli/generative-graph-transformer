@@ -4,8 +4,8 @@ from scipy.stats import wasserstein_distance
 import torch
 from torch.nn import BCELoss, MSELoss
 
-from utils import decode_adj, plot_point_cloud
-from streetmover_distance import StreetMoverDistance, show_assignments
+from utils.utils import decode_adj
+from metrics.streetmover_distance import StreetMoverDistance
 
 criterion_mse = MSELoss(reduction='mean')
 criterion_bce = BCELoss(reduction='mean')

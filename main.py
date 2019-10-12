@@ -1,20 +1,17 @@
-import torch
 from torch.utils.data import DataLoader
 from torch.nn import BCELoss, MSELoss
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
 
 import pickle
 import time
-import numpy as np
 from tensorboardX import SummaryWriter
 
 from arguments import get_parser, set_default_args
-from configs import Configs
-from dataset import ToulouseRoadNetworkDataset, custom_collate_fn
-from models_encoder import CNNEncoderSimple, CNNEncoderAtt
-from models_decoder import DecoderGRU, DecoderMLP, DecoderGRUAtt, DecoderGGT, DecoderGraphRNN, DecoderGraphRNNAtt
-from statistics import compute_statistics, compute_statistics_MLP
-from utils import *
+from utils.configs import Configs
+from utils.dataset import ToulouseRoadNetworkDataset, custom_collate_fn
+from models.models_encoder import CNNEncoderSimple, CNNEncoderAtt
+from models.models_decoder import DecoderGRU, DecoderMLP, DecoderGRUAtt, DecoderGGT, DecoderGraphRNN, DecoderGraphRNNAtt
+from metrics.statistics import compute_statistics, compute_statistics_MLP
 
 
 # ########################################################################################
@@ -27,7 +24,7 @@ from utils import *
 def load_encoder(args):
     r"""
     Load the PyTorch model for the encoder specified in args.
-    If pretrained_encoder, load the checkpoint of the encoder saved after trainin for reconstruction (train_CNN.py).
+    If pretrained_encoder, load the checkpoint of the encoder saved after trainin for reconstruction (pretrain_encoder.py).
     If test, load the state dictionary from checkpoint.
     Create optimizer for the encoder.
     

@@ -1,5 +1,4 @@
 import torch
-import torchvision
 from torch import nn
 from torch.utils.data import DataLoader
 import torchvision.datasets as dset
@@ -10,8 +9,8 @@ import numpy as np
 import argparse
 import os
 
-from models_encoder import CNNDecoderSimple, CNNEncoderSimple, CNNEncoderSimpleForContextAttention
-from utils import ensure_dir, save_cnn_plots
+from models.models_encoder import CNNDecoderSimple, CNNEncoderSimple, CNNEncoderSimpleForContextAttention
+from utils.utils import ensure_dir, save_cnn_plots
 
 
 def run_epoch(epoch, dataloader, encoder, decoder, optimizer, criterion, is_eval=False, save_plots=False, dir_plots=""):

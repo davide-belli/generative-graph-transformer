@@ -1,8 +1,6 @@
 import argparse
-import torch
-import os
 
-from utils import *
+from utils.utils import *
 
 
 def get_parser():

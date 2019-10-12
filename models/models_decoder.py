@@ -1,10 +1,8 @@
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, PackedSequence
 
-from layers_GGT import *
-from utils import sample_sigmoid
+from models.layers_GGT import *
+from utils.utils import sample_sigmoid
 
 
 def init_weights(m):

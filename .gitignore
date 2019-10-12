@@ -1,3 +1,4 @@
-dataset/
+dataset/**/
 output_cnn/
 output_graph/
+.idea
