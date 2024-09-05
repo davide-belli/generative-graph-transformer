@@ -34,7 +34,7 @@ See [`requirements.txt`](https://github.com/davide-belli/generative-graph-transf
 * [`pretrain_encoder.py`](https://github.com/davide-belli/generative-graph-transformer/blob/master/pretrain_encoder.py): Script to pre-train the CNN encoder for image reconstruction as part of an auto-encoder.
 
 ## Usage
-- First download Toulouse Road Network dataset using [`data/download_dataset.sh`](https://github.com/davide-belli/generative-graph-transformer/blob/master/data/download_dataset.sh).
+- First download Toulouse Road Network dataset using [`data/download_dataset.sh`](https://github.com/davide-belli/generative-graph-transformer/blob/master/data/download_dataset.sh). If this does not work, try the direct download [link](https://drive.google.com/file/d/1ZyFQMNGK6gd6MN9cNWAMl0McLL6GHthG/view).
 - Then, configure [`arguments.py`](https://github.com/davide-belli/generative-graph-transformer/blob/master/arguments.py) to choose which model to train/test and finally run [`main.py`](https://github.com/davide-belli/generative-graph-transformer/blob/master/main.py).
 - The output plots, logs, tensorboard and statistics will be automatically generated in `output_graph/`
 
